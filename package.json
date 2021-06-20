@@ -1,0 +1,25 @@
+{
+  "name": "ozner-token",
+  "version": "1.0.0",
+  "description": "Ozner Token ICO",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/LorenzoWynberg/ozner-token.git"
+  },
+  "keywords": [
+    "Crypto",
+    "ETH",
+    "Token",
+    "ERC20"
+  ],
+  "author": "Lorenzo Wynberg",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LorenzoWynberg/ozner-token/issues"
+  },
+  "homepage": "https://github.com/LorenzoWynberg/ozner-token#readme"
+}
