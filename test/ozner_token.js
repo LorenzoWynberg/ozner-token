@@ -6,13 +6,15 @@ const OznerToken = artifacts.require("OznerToken");
  * See docs: https://www.trufflesuite.com/docs/truffle/testing/writing-tests-in-javascript
  */
 contract("OznerToken", function (accounts) {
-  it("sets total supply upon deployment", function () {
-    return OznerToken.deployed()
-    .then(function(instance){
-      return instance.totalSupply();
-    })
-    .then(function(totalSupply){
-      assert.equal(totalSupply.toNumber(), 1000000, 'Sets the total supply to 1 million')
-    });
+  /*
+   * Set total supply to one million tokens,
+   * then allocates them to the admin account
+   */
+  it('Sets total supply upon deployment', async () => {
+    let tokenInstance = await OznerToken.deployed();
+    let totalSupply = await tokenInstance.totalSupply();
+    assert.equal(totalSupply.toNumber(), 1000000, 'Sets the total supply to 1 million');
+    let adminBalance = await tokenInstance.balanceOf(accounts[0]);
+    assert.equal(adminBalance.toNumber(), 1000000, 'Alocates initial supply to the admin account');
   });
 });
