@@ -74,7 +74,7 @@ contract("OznerToken", function (accounts) {
   });
 
   /*
-   *
+   * Approves someone to spend tokens on behalf of someone else
    *
    */
   it('Approves tokens for delegated transfer', async () => {
@@ -94,6 +94,10 @@ contract("OznerToken", function (accounts) {
     assert.equal(allowance, 100, 'Stores the allowance for delegated transfer');
   });
 
+  /*
+   * Transfers delegated tokens
+   *
+   */
   it('Handles delegated token transfers', async () => {
     let tokenInstance = await OznerToken.deployed();
 
